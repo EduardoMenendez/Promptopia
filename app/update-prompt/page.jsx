@@ -3,7 +3,7 @@ import {useEffect, useState} from 'react';
 import {useRouter} from 'next/navigation';
 import { useSearchParams } from 'next/navigation';
 
-import Form from '@components/form';
+import Form from '@components/Form';
 
 const EditPrompt = () => {
     const [submitting, setSubmitting] = useState(false);
