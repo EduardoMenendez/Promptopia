@@ -4,9 +4,19 @@ import {useState, useEffect} from 'react';
 import Profile from '@components/Profile';
 
 const UserProfile = () => {
-    const searchParams = useSearchParams();
-    const id = searchParams.get('id');
-    const username = searchParams.get('username');
+    
+
+    const getData = ()=>{
+        const searchParams = useSearchParams();
+        const id = searchParams.get('id');
+        const username = searchParams.get('username');
+        return {
+            id, 
+            username
+        };
+    }
+
+    const {id, username} = getData();
 
     if(!id) return null;
 

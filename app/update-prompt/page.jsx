@@ -7,8 +7,12 @@ import Form from '@components/Form';
 
 const EditPrompt = () => {
     const [submitting, setSubmitting] = useState(false);
-    const searchParams = useSearchParams();
-    const promptId = searchParams.get('id');
+    const getId = ()=>{
+        const searchParams = useSearchParams();
+        const promptId = searchParams.get('id');
+        return promptId;
+    };
+    const promptId = getId();
     const getPromptDetails = async () => {
         const prompt = await fetch(`/api/prompts/${promptId}`);
         const data = await prompt.json();
